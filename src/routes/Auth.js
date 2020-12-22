@@ -17,11 +17,11 @@ const Auth = () => {
             setPassword(value);
         }
     };
-    const onSubmit = async(event) => {
+    const onSubmit = async (event) => {
         event.preventDefault();
         try {
             let data;
-            if(newAccount) {
+            if (newAccount) {
                 data = await authService.createUserWithEmailAndPassword(
                     email,
                     password
@@ -30,10 +30,10 @@ const Auth = () => {
                 data = await authService.signInWithEmailAndPassword(
                     email,
                     password
-                ); 
+                );
             }
             console.log(data);
-        } catch(error) {
+        } catch (error) {
             setError(error.message);
         }
     };
@@ -71,7 +71,10 @@ const Auth = () => {
                     value={password}
                     onChange={onChange}
                 />
-                <input type="submit" value={newAccount ? "Create Account" : "Log In"} />
+                <input
+                    type="submit"
+                    value={newAccount ? "Create Account" : "Log In"}
+                />
                 {error}
             </form>
             <span onClick={toggleAccount}>
