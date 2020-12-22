@@ -16,9 +16,10 @@ function App() {
     });
   }, []);
   console.log(authService.currentUser);
-  setInterval(() => {
+  /*setInterval(() => {
     console.log(authService.currentUser)
-  }, 2000);
+  }, 2000);*/
+  
   return (
     <>
       {init ? <AppRouter isLoggedIn={isLoggedIn} /> : "Initializing..."}
