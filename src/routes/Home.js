@@ -5,8 +5,8 @@ const Home = ({ userObj }) => {
     const [nweet, setNweet] = useState("");
     const [nweets, setNweets] = useState([]);
     useEffect(() => {
-        dbService.collection("nweets").onSnapshot((snapshot) => { // onSnapshot : CollectionReference 안에, 데이터베이스의 변화를 실시간으로 알려줌
-            const nweetArray = snapshot.docs.map((doc) => ({ // forEach 보다 re=render하는 횟수가 적음
+        dbService.collection("nweets").onSnapshot((snapshot) => {
+            const nweetArray = snapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
             }));
