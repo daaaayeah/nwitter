@@ -14,6 +14,8 @@ function App() {
                     updateProfile: (args) => user.updateProfile(args),
                 });
                 // setUserObj(user); // 다른 방법 -> 버그 O
+            } else {
+                setUserObj(null);
             }
             setInit(true);
         });
